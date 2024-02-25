@@ -19,13 +19,13 @@ public class Coordinate {
         this.verticalMin = vmin;
         this.verticalMax = vmax;
     }
-    
+     
     final public void goUp(int amount) {
-        this.y = Math.min(this.y + amount, verticalMax);
+        this.y = Math.max(this.y - amount, verticalMin);
     }
 
     final public void goDown(int amount) {
-        this.y = Math.max(this.y - amount, verticalMin);
+        this.y = Math.min(this.y + amount, verticalMax);
     }
     
     final public void goLeft(int amount) {
