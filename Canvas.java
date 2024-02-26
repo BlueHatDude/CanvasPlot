@@ -28,6 +28,15 @@ public class Canvas {
         }
     }    
 
+    public void printPosition() {
+        for (int i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < WIDTH; j++) {
+                System.out.printf(" %c ",
+                    ( (i == this.coordinates.y) && (j == this.coordinates.x) ) ? '@' : this.canvas[i][j]);
+            }
+            System.out.println();
+        }
+    }
 
     public void start() {
         System.out.println("Started");
@@ -66,6 +75,7 @@ public class Canvas {
      * * r: move right
      * * l: move left
      * * p: place point
+     * * o: see position
      * * q: quit
      * * s: see map
      * * h: print help
@@ -87,6 +97,10 @@ public class Canvas {
                 break;
             case 'p':
                 placePoint(this.coordinates.x, this.coordinates.y);
+                break;
+            case 'o':
+                // this.printPosition();
+                this.printPosition();
                 break;
             case 's':
                 this.printCanvas();
